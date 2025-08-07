@@ -6,7 +6,7 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 struct CartaSuperTrunfo {
-   char estado[3];                //Sigla do estado
+   char estado[3];            //Sigla do estado
    char codigo[4];            //Codigo da carta
    char nomeCidade[100];      //Nome da cidade
    int populacao;             //População da cidade
@@ -48,7 +48,7 @@ int main () {
 
     printf ("Cadastro da Carta 2:\n");
 
-     printf ("Digite a sigla do Estado (Ex: MG): ");
+    printf ("Digite a sigla do Estado (Ex: MG): ");
     scanf (" %2s", carta2.estado);
 
     printf ("Digite o código da carta (ex: A01) : ");
