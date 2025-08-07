@@ -50,7 +50,7 @@ int main () {
     carta1.denspopulacional = (float)carta1.populacao/carta1.area;
     carta1.pibpercapita = (carta1.pib * 1000000000.0f) / carta1.populacao;
 
-    carta1.SuperPoder = carta1.populacao + carta1.area + carta1.pib + carta1.pontosTuristicos + (1/carta1.denspopulacional);
+    carta1.SuperPoder = carta1.populacao + carta1.area + carta1.pib + carta1.pontosTuristicos + (1.0/carta1.denspopulacional);
 
     // entrada de dados carta2
 
@@ -80,7 +80,7 @@ int main () {
     carta2.denspopulacional = (float)carta2.populacao/carta2.area;
     carta2.pibpercapita = (carta2.pib * 1000000000.0f) / carta2.populacao;
 
-    carta2.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + (1/carta2.denspopulacional);
+    carta2.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + (1.0/carta2.denspopulacional);
 
 
     //impressão Carta 1
