@@ -15,6 +15,7 @@ struct CartaSuperTrunfo {
    int pontosTuristicos;      //Numero de pontos turisticos
    float denspopulacional;    //Densidade populacional
    float pibpercapita;        //PIB per capital
+   float SuperPoder;          //Trunfo da carta
 };
 
 int main () {
@@ -49,6 +50,8 @@ int main () {
     carta1.denspopulacional = (float)carta1.populacao/carta1.area;
     carta1.pibpercapita = (carta1.pib * 1000000000.0f) / carta1.populacao;
 
+    carta1.SuperPoder = carta1.populacao + carta1.area + carta1.pib + carta1.pontosTuristicos + (1/carta1.denspopulacional);
+
     // entrada de dados carta2
 
     printf ("Cadastro da Carta 2:\n");
@@ -77,6 +80,9 @@ int main () {
     carta2.denspopulacional = (float)carta2.populacao/carta2.area;
     carta2.pibpercapita = (carta2.pib * 1000000000.0f) / carta2.populacao;
 
+    carta1.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + (1/carta2.denspopulacional);
+
+
     //impressão Carta 1
     printf ("\ncarta 1:\n");
     printf ("Estado: %s\n", carta1.estado);
@@ -88,6 +94,7 @@ int main () {
     printf ("Número de pontos turísticos: %d\n", carta1.pontosTuristicos);
     printf("Densidade populacional: %.2f hab/km²\n", carta1.denspopulacional);
     printf("PIB per capita: R$ %.2f\n", carta1.pibpercapita);
+    printf("SuperPoder da Carta 1: %.2f\n", carta1.SuperPoder);
 
 
 
@@ -102,6 +109,8 @@ int main () {
     printf ("Número de pontos turísticos: %d\n", carta2.pontosTuristicos);
     printf("Densidade populacional: %.2f hab/km²\n", carta2.denspopulacional);
     printf("PIB per capita: R$ %.2f\n", carta2.pibpercapita);
+    printf("SuperPoder da Carta 2: %.2f\n", carta1.SuperPoder);
+
 
     return 0;
 
