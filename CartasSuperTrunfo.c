@@ -80,7 +80,7 @@ int main () {
     carta2.denspopulacional = (float)carta2.populacao/carta2.area;
     carta2.pibpercapita = (carta2.pib * 1000000000.0f) / carta2.populacao;
 
-    carta1.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + (1/carta2.denspopulacional);
+    carta2.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + (1/carta2.denspopulacional);
 
 
     //impressão Carta 1
@@ -109,7 +109,7 @@ int main () {
     printf ("Número de pontos turísticos: %d\n", carta2.pontosTuristicos);
     printf("Densidade populacional: %.2f hab/km²\n", carta2.denspopulacional);
     printf("PIB per capita: R$ %.2f\n", carta2.pibpercapita);
-    printf("SuperPoder da Carta 2: %.2f\n", carta1.SuperPoder);
+    printf("SuperPoder da Carta 2: %.2f\n", carta2.SuperPoder);
 
 
     return 0;
