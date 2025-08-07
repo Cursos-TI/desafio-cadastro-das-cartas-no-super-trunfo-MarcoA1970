@@ -111,23 +111,16 @@ int main () {
     printf("PIB per capita: R$ %.2f\n", carta2.pibpercapita);
     printf("SuperPoder da Carta 2: %.2f\n", carta2.SuperPoder);
 
-    //comparação de cartas
+    printf("Resultados das Comparações (1 = Carta 1 Vence / 0 = Carta 2 Vence ou Empate) ---\n");
+    printf("População: %d\n", carta1.populacao > carta2.populacao);
+    printf("Área: %d\n", carta1.area > carta2.area);
+    printf("PIB: %d\n", carta1.pib > carta2.pib);
+    printf("Pontos Turísticos: %d\n", carta1.pontosTuristicos > carta2.pontosTuristicos);
+    printf("Densidade Populacional: %d\n", carta1.denspopulacional < carta2.denspopulacional);    // ATENÇÃO: PARA DENSIDADE, MENOR VALOR GERALMENTE VENCE
+    printf("PIB per Capita: %d\n", carta1.pibpercapita > carta2.pibpercapita);
+    printf("Super Poder: %d\n", carta1.SuperPoder > carta2.SuperPoder);
 
-    int resultadopopulacao;    //para comparação
-    
-    resultadopopulacao = carta1.populacao > carta2.populacao;
 
-    printf ("Comparação de Cartas\n");
-    
-    if (resultadopopulacao == 1) {
 
-    printf ("população: Carta 1 venceu\n");
-
-    } else if (resultadopopulacao == 0) {
-
-    printf ("população: Carta 2 venceu\n");
 
     }
-    return 0;
-
-
