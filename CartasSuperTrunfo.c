@@ -16,7 +16,7 @@ struct CartaSuperTrunfo {
    float denspopulacional;    //Densidade populacional
    float pibpercapita;        //PIB per capital
    float SuperPoder;          //Trunfo da carta
-};
+   };
 
 int main () {
     struct CartaSuperTrunfo carta1;  //dados carta 1
@@ -111,7 +111,23 @@ int main () {
     printf("PIB per capita: R$ %.2f\n", carta2.pibpercapita);
     printf("SuperPoder da Carta 2: %.2f\n", carta2.SuperPoder);
 
+    //comparação de cartas
 
+    int resultadopopulacao;    //para comparação
+    
+    resultadopopulacao = carta1.populacao > carta2.populacao;
+
+    printf ("Comparação de Cartas\n");
+    
+    if (resultadopopulacao == 1) {
+
+    printf ("população: Carta 1 venceu\n");
+
+    } else if (resultadopopulacao == 0) {
+
+    printf ("população: Carta 2 venceu\n");
+
+    }
     return 0;
 
-     }
+
