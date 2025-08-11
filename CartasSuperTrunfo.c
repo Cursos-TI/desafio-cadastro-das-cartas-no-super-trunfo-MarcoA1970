@@ -93,9 +93,7 @@ if (carta1.populacao > 0) {
     printf("Atenção: População da cidade %s é zero. PIB per Capita definido como 0.\\n", carta1.nomeCidade);
     carta1.pibpercapita = 0.0f;
 }
-    carta1.denspopulacional = (float)carta1.populacao/carta1.area;
-    carta1.pibpercapita = (carta1.pib * 1000000000.0f) / carta1.populacao;
-
+    
     carta1.SuperPoder = carta1.populacao + carta1.area + carta1.pib + carta1.pontosTuristicos + carta1.pibpercapita + (1.0/carta1.denspopulacional);
 
     if (carta1.denspopulacional > 0.0f) {
@@ -133,8 +131,8 @@ if (carta1.populacao > 0) {
 if (carta2.area > 0.0f) {
     carta2.denspopulacional = (float)carta2.populacao / carta2.area;
 } else {
-    printf("Atenção: Área da cidade %s é zero. Densidade populacional definida como 0.\\n", carta1.nomeCidade);
-    carta1.denspopulacional = 0.0f;
+    printf("Atenção: Área da cidade %s é zero. Densidade populacional definida como 0.\\n", carta2.nomeCidade);
+    carta2.denspopulacional = 0.0f;
 }
 
 // Para PIB per capita:
@@ -144,10 +142,7 @@ if (carta2.populacao > 0) {
     printf("Atenção: População da cidade %s é zero. PIB per Capita definido como 0.\\n", carta2.nomeCidade);
     carta2.pibpercapita = 0.0f;
 }
-    carta2.denspopulacional = (float)carta2.populacao/carta2.area;
-    carta2.pibpercapita = (carta2.pib * 1000000000.0f) / carta2.populacao;
-
-    carta2.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + carta2.pibpercapita + (1.0/carta2.denspopulacional);
+      carta2.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + carta2.pibpercapita + (1.0/carta2.denspopulacional);
 
     if (carta2.denspopulacional > 0.0f) {
     carta2.SuperPoder += (1.0f / carta2.denspopulacional);
