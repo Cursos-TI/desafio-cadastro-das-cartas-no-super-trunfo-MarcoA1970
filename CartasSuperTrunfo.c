@@ -78,10 +78,31 @@ int main () {
     printf ("Digite o número de pontos turísticos: ");
     scanf ("%d", &carta1.pontosTuristicos);
 
+    // Para densidade populacional:
+if (carta1.area > 0.0f) {
+    carta1.denspopulacional = (float)carta1.populacao / carta1.area;
+} else {
+    printf("Atenção: Área da cidade %s é zero. Densidade populacional definida como 0.\\n", carta1.nomeCidade);
+    carta1.denspopulacional = 0.0f;
+}
+
+// Para PIB per capita:
+if (carta1.populacao > 0) {
+    carta1.pibpercapita = (carta1.pib * 1000000000.0f) / (float)carta1.populacao;
+} else {
+    printf("Atenção: População da cidade %s é zero. PIB per Capita definido como 0.\\n", carta1.nomeCidade);
+    carta1.pibpercapita = 0.0f;
+}
     carta1.denspopulacional = (float)carta1.populacao/carta1.area;
     carta1.pibpercapita = (carta1.pib * 1000000000.0f) / carta1.populacao;
 
     carta1.SuperPoder = carta1.populacao + carta1.area + carta1.pib + carta1.pontosTuristicos + carta1.pibpercapita + (1.0/carta1.denspopulacional);
+
+    if (carta1.denspopulacional > 0.0f) {
+    carta1.SuperPoder += (1.0f / carta1.denspopulacional);
+} else {
+    printf("Atenção: Densidade populacional da cidade %s é zero, Super Poder pode ser impreciso.\\n", carta1.nomeCidade);
+}
 
     // entrada de dados carta2
 
@@ -108,10 +129,31 @@ int main () {
     printf ("Digite o número de pontos turísticos: ");
     scanf ("%d", &carta2.pontosTuristicos);
 
+    // Para densidade populacional:
+if (carta2.area > 0.0f) {
+    carta2.denspopulacional = (float)carta2.populacao / carta2.area;
+} else {
+    printf("Atenção: Área da cidade %s é zero. Densidade populacional definida como 0.\\n", carta1.nomeCidade);
+    carta1.denspopulacional = 0.0f;
+}
+
+// Para PIB per capita:
+if (carta2.populacao > 0) {
+    carta2.pibpercapita = (carta2.pib * 1000000000.0f) / (float)carta2.populacao;
+} else {
+    printf("Atenção: População da cidade %s é zero. PIB per Capita definido como 0.\\n", carta2.nomeCidade);
+    carta2.pibpercapita = 0.0f;
+}
     carta2.denspopulacional = (float)carta2.populacao/carta2.area;
     carta2.pibpercapita = (carta2.pib * 1000000000.0f) / carta2.populacao;
 
     carta2.SuperPoder = carta2.populacao + carta2.area + carta2.pib + carta2.pontosTuristicos + carta2.pibpercapita + (1.0/carta2.denspopulacional);
+
+    if (carta2.denspopulacional > 0.0f) {
+    carta2.SuperPoder += (1.0f / carta2.denspopulacional);
+} else {
+    printf("Atenção: Densidade populacional da cidade %s é zero, Super Poder pode ser impreciso.\\n", carta1.nomeCidade);
+}
 
  // Escolha do primeiro atributo
     exibirMenu(0);
@@ -157,26 +199,14 @@ int main () {
     float somaC2 = c2_a1 + c2_a2;
 
     // Exibir resultado
-    printf("\n===== Resultado da Comparação =====\n");
-    printf("Carta 1: %s\n", carta1.nomeCidade);
-    printf("Carta 2: %s\n", carta2.nomeCidade);
-
-    // Mostrar nome dos atributos para melhor leitura
-    char* nomesAtributos[8] = {"", "População", "Área", "PIB", "Pontos Turísticos", "Densidade Demográfica", "PIB per Capita", "Super Poder"};
-
-    printf("\nAtributo 1 (%s): %.2f vs %.2f\n", nomesAtributos[opcao1], c1_a1, c2_a1);
-    printf("Atributo 2 (%s): %.2f vs %.2f\n", nomesAtributos[opcao2], c1_a2, c2_a2);
-
-    printf("\nSoma Carta 1: %.2f\n", somaC1);
-    printf("Soma Carta 2: %.2f\n", somaC2);
-
-    // Determinar vencedor pela soma
-    if (somaC1 > somaC2)
-        printf("\nVencedor: %s\n", carta1.nomeCidade);
-    else if (somaC2 > somaC1)
-        printf("\nVencedor: %s\n", carta2.nomeCidade);
-    else
-        printf("\nEmpate!\n");
+    printf("\\n===== Resultado da Rodada =====\\n");
+if (pontosC1 == 2) {
+    printf("Vencedor da Rodada: %s (venceu nos dois atributos)!\\n", carta1.nomeCidade);
+} else if (pontosC2 == 2) {
+    printf("Vencedor da Rodada: %s (venceu nos dois atributos)!\\n", carta2.nomeCidade);
+} else {
+    printf("Empate na Rodada! (Cada carta venceu um atributo ou houve empates individuais).\\n");
+}
 
     return 0;
 
