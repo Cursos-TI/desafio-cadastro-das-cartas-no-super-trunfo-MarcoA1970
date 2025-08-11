@@ -147,7 +147,7 @@ if (carta2.populacao > 0) {
     if (carta2.denspopulacional > 0.0f) {
     carta2.SuperPoder += (1.0f / carta2.denspopulacional);
 } else {
-    printf("Atenção: Densidade populacional da cidade %s é zero, Super Poder pode ser impreciso.\\n", carta1.nomeCidade);
+    printf("Atenção: Densidade populacional da cidade %s é zero, Super Poder pode ser impreciso.\\n", carta2.nomeCidade);
 }
 
  // Escolha do primeiro atributo
@@ -194,13 +194,13 @@ if (carta2.populacao > 0) {
     float somaC2 = c2_a1 + c2_a2;
 
     // Exibir resultado
-    printf("\\n===== Resultado da Rodada =====\\n");
+    printf("\\n===== Resultado da Rodada =====\n");
 if (pontosC1 == 2) {
-    printf("Vencedor da Rodada: %s (venceu nos dois atributos)!\\n", carta1.nomeCidade);
+    printf("Vencedor da Rodada: %s (venceu nos dois atributos)!\n", carta1.nomeCidade);
 } else if (pontosC2 == 2) {
-    printf("Vencedor da Rodada: %s (venceu nos dois atributos)!\\n", carta2.nomeCidade);
+    printf("Vencedor da Rodada: %s (venceu nos dois atributos)!\n", carta2.nomeCidade);
 } else {
-    printf("Empate na Rodada! (Cada carta venceu um atributo ou houve empates individuais).\\n");
+    printf("Empate na Rodada! (Cada carta venceu um atributo ou houve empates individuais).\n");
 }
 
     return 0;
